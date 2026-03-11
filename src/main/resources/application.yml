@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: safeschool
+
+
+#logging:
+#  level:
+#    # This silences the Hibernate startup/metadata logs
+#    org.hibernate: WARN
+#    # This silences the connection pool logs
+#    org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: WARN
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/safeschool_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    # Ensure this is set to false if you want to hide SQL queries
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: false
+server:
+  port: 8081
