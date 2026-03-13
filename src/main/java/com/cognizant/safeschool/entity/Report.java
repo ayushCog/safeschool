@@ -16,6 +16,6 @@ public class Report {
     private Long reportId;
     private String scope;
     @Column(columnDefinition = "TEXT")
-    private String metrics;
+    private String metrics; // only for analysis
     private LocalDateTime generatedDate;
 }

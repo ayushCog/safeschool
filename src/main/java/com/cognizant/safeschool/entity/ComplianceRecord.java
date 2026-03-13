@@ -13,10 +13,8 @@ import lombok.NoArgsConstructor;
 public class ComplianceRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long complianceId;
-
+    private Long complianceId; // use as primary key
     private Long entityId;
-
     private String type;
     private String result;
     private LocalDate date;
