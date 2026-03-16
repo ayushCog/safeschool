@@ -6,6 +6,7 @@ import com.cognizant.safeschool.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import java.time.LocalDate;
+import jakarta.annotation.Nonnull;
 
 @Component
 public class DataInitializer implements CommandLineRunner {
@@ -20,7 +21,7 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args)  {
+    public void run(@Nonnull String... args)  {
 
         User officer = new User();
         officer.setName("Officer John");
