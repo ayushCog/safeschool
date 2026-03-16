@@ -1,0 +1,22 @@
+package com.cognizant.safeschool.entity;
+
+import java.time.LocalDateTime;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Report {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long reportId;
+    private String scope;
+
+    @Column(columnDefinition = "TEXT")
+    private String metrics;
+    private LocalDateTime generatedDate;
+}
