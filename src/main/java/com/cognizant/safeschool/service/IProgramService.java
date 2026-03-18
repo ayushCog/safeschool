@@ -13,5 +13,5 @@ public interface IProgramService {
 
     public SuccessResponseProjection<ProgramProjection> updateProgram(Long programId, ProgramDto programDto);
 
-    SuccessResponseProjection<ProgramProjection> getProgram(Long programId);
+    public SuccessResponseProjection<ProgramProjection> getProgram(Long programId);
 }

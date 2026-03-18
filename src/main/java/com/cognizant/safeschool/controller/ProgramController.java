@@ -24,6 +24,11 @@ public class ProgramController {
         return ResponseEntity.status(HttpStatus.OK).body(programServiceImpl.getAllPrograms());
     }
 
+    @PostMapping("/create")
+    public ResponseEntity<SuccessResponseProjection<ProgramProjection>> createProgram(@RequestBody ProgramDto programDto){
+        return ResponseEntity.status(HttpStatus.OK).body(programServiceImpl.createProgram(programDto));
+    }
+
     @GetMapping("/{programId}")
     public ResponseEntity<SuccessResponseProjection<ProgramProjection>> getProgram(@PathVariable Long programId){
         return ResponseEntity.status(HttpStatus.OK).body(programServiceImpl.getProgram(programId));

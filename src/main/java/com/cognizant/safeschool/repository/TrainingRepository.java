@@ -5,9 +5,11 @@ import com.cognizant.safeschool.projection.TrainingProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface TrainingRepository extends JpaRepository<Training, Long> {
     @Query("SELECT new com.cognizant.safeschool.projection.TrainingProjection(t.trainingId, t.program.programId, t.staff.userId, t.completionDate, t.status) FROM Training t WHERE t.program.programId = :programId")
     List<TrainingProjection> findAllByProgramId(@Param("programId") Long programId);

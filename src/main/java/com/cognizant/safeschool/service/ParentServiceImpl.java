@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class ParentServiceImpl implements IParentService {
     @Autowired
-    ParentRepository parentRepository;
+    private ParentRepository parentRepository;
 
     @Autowired
     private UserRepository userRepository;

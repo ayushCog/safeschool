@@ -46,11 +46,12 @@ public class ResolutionServiceImpl implements IResolutionService{
         resolution.setActions(resolutionDto.getActions());
         resolution.setDate(resolutionDto.getDate());
         resolution.setStatus(resolutionDto.getStatus());
+
         incident.setStatus(resolutionDto.getStatus());
 
-        incidentRepository.save(incident);
-
         Resolution savedRes=resolutionRepository.save(resolution);
+
+        incidentRepository.save(incident);
 
         return new SuccessResponseProjection<>(true, "Resolution recorded", mapToProjection(savedRes));
     }
