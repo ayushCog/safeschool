@@ -2,21 +2,13 @@ package com.cognizant.safeschool.entity;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class User {
     @Id
@@ -30,10 +22,10 @@ public class User {
     private String status;
     private String password;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Student student;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Parent parent;
 
     @OneToMany(mappedBy = "user")
@@ -42,14 +34,17 @@ public class User {
     @OneToMany(mappedBy = "staff")
     private List<Training> trainings;
 
-    @OneToMany(mappedBy = "reporter")
+    @OneToMany(mappedBy = "reporter", cascade = CascadeType.ALL)
     private List<Incident> reportedIncidents;
 
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications;
 
-    @OneToMany(mappedBy = "officer")
+    @OneToMany(mappedBy = "officer", cascade = CascadeType.ALL)
     private List<Audit> audits;
+
+    @OneToMany(mappedBy = "officer", cascade = CascadeType.ALL)
+    private List<Resolution> resolutions;
 
     @OneToMany(mappedBy = "officer")
     private List<Drill> drills;

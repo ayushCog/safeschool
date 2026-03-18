@@ -5,7 +5,8 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class ErrorResponseProjection {
-    private boolean isSuccess;
-    private String message;
+public class SuccessResponseProjection<T> {
+    boolean isSuccess;
+    String message;
+    T data;
 }

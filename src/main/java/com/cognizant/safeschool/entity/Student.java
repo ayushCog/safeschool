@@ -9,7 +9,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "students")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -25,11 +24,17 @@ public class Student {
     private LocalDate dob;
     private String gender;
     private String address;
-    private String contactInfo;
-    private String status;
 
     @OneToMany(mappedBy = "student")
     private List<StudentDocument> documents;
+
+    @ManyToMany
+    @JoinTable(
+        name = "student_drills",
+        joinColumns = @JoinColumn(name = "student_id"),
+        inverseJoinColumns = @JoinColumn(name = "drill_id")
+    )
+    private List<Drill> drills;
 
     @OneToMany(mappedBy = "student")
     private List<Parent> parents;
