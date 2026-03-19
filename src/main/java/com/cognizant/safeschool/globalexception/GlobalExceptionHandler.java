@@ -5,12 +5,18 @@ import com.cognizant.safeschool.projection.ErrorResponseProjection;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import com.cognizant.safeschool.classexception.EmergencyException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(UserException.class)
     public ResponseEntity<?> handleUserNotFound(UserException ex){
         ErrorResponseProjection errorResponse=new ErrorResponseProjection(false, ex.getMessage());
+        return ResponseEntity.status(ex.getHttpStatus()).body(errorResponse);
+    }
+    @ExceptionHandler(EmergencyException.class)
+    public ResponseEntity<?> handleEmergencyError(EmergencyException ex){
+        ErrorResponseProjection errorResponse = new ErrorResponseProjection(false, ex.getMessage());
         return ResponseEntity.status(ex.getHttpStatus()).body(errorResponse);
     }
 }

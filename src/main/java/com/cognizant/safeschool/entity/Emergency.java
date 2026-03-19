@@ -3,6 +3,7 @@ package com.cognizant.safeschool.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
@@ -27,5 +28,6 @@ public class Emergency {
     private String status;
 
     @OneToMany(mappedBy = "emergency")
+    @JsonManagedReference
     private List<Drill> drills;
 }

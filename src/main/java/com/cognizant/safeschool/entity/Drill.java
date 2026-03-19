@@ -1,5 +1,7 @@
 package com.cognizant.safeschool.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -27,10 +29,12 @@ public class Drill {
 
     @ManyToOne
     @JoinColumn(name = "emergency_id")
+    @JsonIgnore
     private Emergency emergency;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User officer;
 
     @Column(name = "drill_date")
