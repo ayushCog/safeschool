@@ -1,22 +1,24 @@
 package com.cognizant.safeschool.controller;
 
 import com.cognizant.safeschool.dto.ComplianceRecordRequestDTO;
-import com.cognizant.safeschool.service.ComplianceService;
+import com.cognizant.safeschool.projection.ComplianceProjection;
+import com.cognizant.safeschool.projection.SuccessResponseProjection;
+import com.cognizant.safeschool.service.IComplianceService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/compliance")
-@CrossOrigin(origins = "*")
+@RequestMapping("/compliance")
 public class ComplianceController {
 
     @Autowired
-    private ComplianceService complianceService;
+    private IComplianceService complianceServiceImpl;
 
     @PostMapping("/log")
-    public ResponseEntity<String> logCompliance(@RequestBody ComplianceRecordRequestDTO dto) {
-        complianceService.saveComplianceFromDto(dto);
-        return ResponseEntity.ok("Compliance record logged and audit trail created.");
+    public ResponseEntity<SuccessResponseProjection<ComplianceProjection>> logCompliance(@RequestBody ComplianceRecordRequestDTO dto) {
+
+        return ResponseEntity.status(HttpStatus.OK).body(complianceServiceImpl.saveComplianceFromDto(dto));
     }
 }
