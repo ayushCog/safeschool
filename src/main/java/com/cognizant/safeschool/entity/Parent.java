@@ -1,14 +1,14 @@
 package com.cognizant.safeschool.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "parents")
 @NoArgsConstructor
-@AllArgsConstructor
 @Data
 public class Parent {
     @Id
@@ -16,14 +16,15 @@ public class Parent {
     private Long parentId;
 
     @OneToOne
-    @MapsId
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
+    @NotNull(message = "Parent must be linked to a User account")
     private User user;
 
+    @NotBlank(message = "Relationship type is required")
     private String relation;
-    private String status;
 
     @ManyToOne
-    @JoinColumn(name = "student_id")
+    @JoinColumn(name = "student_id", nullable = false)
+    @NotNull(message = "Parent must be associated with a Student")
     private Student student;
 }
