@@ -11,7 +11,7 @@ import java.util.List;
 
 @Repository
 public interface ResolutionRepository extends JpaRepository<Resolution, Long> {
-    @Query("select new com.cognizant.safeschool.projection.ResolutionProjection(r.resolutionId, r.incident.incidentId, r.officer.userId, r.actions, r.date, r.status) from Resolution r where r.incident.incidentId= : incidentId")
+    @Query("select new com.cognizant.safeschool.projection.ResolutionProjection(r.resolutionId, r.incident.incidentId, r.officer.userId, r.actions, r.date, r.status) from Resolution r where r.incident.incidentId= :incidentId")
     public ResolutionProjection findResolutionByIncidentId(@Param("incidentId") Long incidentId);
 
     @Query("select new com.cognizant.safeschool.projection.ResolutionProjection(r.resolutionId, r.incident.incidentId, r.officer.userId, r.actions, r.date, r.status) from Resolution r where r.officer.userId= :userId")

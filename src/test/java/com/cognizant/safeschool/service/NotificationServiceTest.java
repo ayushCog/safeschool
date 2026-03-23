@@ -1,5 +1,6 @@
 package com.cognizant.safeschool.service;
 
+import com.cognizant.safeschool.dto.NotificationDto;
 import com.cognizant.safeschool.entity.Notification;
 import com.cognizant.safeschool.entity.User;
 import com.cognizant.safeschool.projection.NotificationProjection;
@@ -35,7 +36,7 @@ public class NotificationServiceTest {
     public void getMyNotifications_ValidTest() {
         Long userId = 1L;
         NotificationProjection np = new NotificationProjection(
-                10L, userId, 5L, "Test Alert", "Incident", "unread", LocalDateTime.now()
+                10L, userId, 5L, "Test Alert", "Incident", "UNREAD", LocalDateTime.now()
         );
 
         when(notificationRepository.findAllByUserId(userId)).thenReturn(Arrays.asList(np));
@@ -44,7 +45,7 @@ public class NotificationServiceTest {
 
         assertTrue(response.isSuccess());
         assertEquals(1, response.getData().size());
-        assertEquals("unread", response.getData().get(0).getStatus());
+        assertEquals("UNREAD", response.getData().get(0).getStatus());
     }
 
     @Test
@@ -58,14 +59,14 @@ public class NotificationServiceTest {
         Notification notification = new Notification();
         notification.setNotificationId(notifId);
         notification.setUser(user);
-        notification.setStatus("read");
+        notification.setStatus("READ");
 
         when(notificationRepository.findById(notifId)).thenReturn(Optional.of(notification));
 
         SuccessResponseProjection<String> response = notificationService.markAsRead(userId, notifId);
 
         assertTrue(response.isSuccess());
-        assertEquals("read", notification.getStatus());
+        assertEquals("READ", notification.getStatus());
         verify(notificationRepository, times(1)).save(notification);
     }
 
@@ -97,7 +98,12 @@ public class NotificationServiceTest {
         User u2 = new User();
         when(userRepository.findAll()).thenReturn(Arrays.asList(u1, u2));
 
-        SuccessResponseProjection<String> response = notificationService.broadcastAlert("Danger!", "Incident");
+        NotificationDto notificationDto=new NotificationDto();
+        notificationDto.setEntityId(1L);
+        notificationDto.setCategory("Incident");
+        notificationDto.setMessage("Danger");
+
+        SuccessResponseProjection<String> response = notificationService.broadcastAlert(notificationDto);
 
         assertTrue(response.isSuccess());
         verify(notificationRepository, times(1)).saveAll(anyList());
@@ -110,7 +116,12 @@ public class NotificationServiceTest {
         officer.setRole(role);
         when(userRepository.findByRole(role)).thenReturn(Arrays.asList(officer));
 
-        SuccessResponseProjection<String> response = notificationService.sendGroupAlert(role, "Meeting", "User");
+        NotificationDto notificationDto=new NotificationDto();
+        notificationDto.setEntityId(1L);
+        notificationDto.setCategory("Incident");
+        notificationDto.setMessage("Danger");
+
+        SuccessResponseProjection<String> response = notificationService.sendGroupAlert(role, notificationDto);
 
         assertTrue(response.isSuccess());
         verify(notificationRepository, times(1)).saveAll(anyList());

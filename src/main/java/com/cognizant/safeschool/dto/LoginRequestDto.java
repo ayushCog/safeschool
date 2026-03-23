@@ -1,19 +1,19 @@
 package com.cognizant.safeschool.dto;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Setter
-public class UserResgistrationDto {
-    private String name;
-    private String role;
+public class LoginRequestDto {
+    @NotBlank(message = "Email is required")
+    @Email
     private String email;
-    private String phone;
-    private String status;
+
+    @NotBlank(message = "Password is required")
     private String password;
 }

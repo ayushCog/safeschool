@@ -1,6 +1,6 @@
 package com.cognizant.safeschool.controller;
 
-import com.cognizant.safeschool.dto.UserResgistrationDto;
+import com.cognizant.safeschool.dto.UserRegistrationDto;
 import com.cognizant.safeschool.projection.SuccessResponseProjection;
 import com.cognizant.safeschool.projection.UserProjection;
 import com.cognizant.safeschool.service.IUserService;
@@ -18,8 +18,5 @@ public class UserController {
     @Autowired
     private IUserService iUserService;
 
-    @PostMapping("/register")
-    public ResponseEntity<SuccessResponseProjection<UserProjection>> registerStudent(@RequestBody UserResgistrationDto userResgistrationDto) {
-        return ResponseEntity.status(HttpStatus.OK).body(iUserService.addUser(userResgistrationDto));
-    }
+
 }

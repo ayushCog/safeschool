@@ -6,6 +6,7 @@ import com.cognizant.safeschool.entity.Program;
 import com.cognizant.safeschool.projection.ProgramProjection;
 import com.cognizant.safeschool.projection.SuccessResponseProjection;
 import com.cognizant.safeschool.repository.ProgramRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -14,12 +15,15 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
+@Slf4j
 public class ProgramServiceImpl implements IProgramService {
     @Autowired
     ProgramRepository programRepository;
 
     @Transactional
     public SuccessResponseProjection<ProgramProjection> createProgram(ProgramDto programDto) {
+        log.info("Service request: Initiating creation of program: {}", programDto.getTitle());
+
         Program program = new Program();
         program.setTitle(programDto.getTitle());
         program.setDescription(programDto.getDescription());
@@ -28,19 +32,31 @@ public class ProgramServiceImpl implements IProgramService {
         program.setStatus(programDto.getStatus() != null ? programDto.getStatus() : "ACTIVE");
 
         Program savedProgram = programRepository.save(program);
+
+        log.info("Successfully created Program ID: {} with Title: {}", savedProgram.getProgramId(), savedProgram.getTitle());
+
         return new SuccessResponseProjection<>(true, "Program created successfully", mapToProjection(savedProgram));
     }
 
     public SuccessResponseProjection<List<ProgramProjection>> getAllPrograms() {
+        log.info("Service request: Retrieving all programs from repository");
+
         List<ProgramProjection> programs = programRepository.getAllPrograms();
+
+        log.info("Successfully retrieved {} programs", programs.size());
 
         return new SuccessResponseProjection<>(true, "Programs retrieved successfully", programs);
     }
 
     @Transactional
     public SuccessResponseProjection<ProgramProjection> updateProgram(Long programId, ProgramDto programDto) {
+        log.info("Service request: Updating Program ID: {}", programId);
+
         Program program = programRepository.findById(programId)
-                .orElseThrow(() -> new ProgramException("Program not found with id: " + programId, HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> {
+                    log.error("Update failed: Program ID: {} not found", programId);
+                    return new ProgramException("Program not found with id: " + programId, HttpStatus.NOT_FOUND);
+                });
 
         if(programDto.getTitle() != null){
             program.setTitle(programDto.getTitle());
@@ -63,12 +79,22 @@ public class ProgramServiceImpl implements IProgramService {
         }
 
         Program updatedProgram = programRepository.save(program);
+
+        log.info("Successfully updated Program ID: {}", programId);
+
         return new SuccessResponseProjection<>(true, "Program updated successfully", mapToProjection(updatedProgram));
     }
 
     public SuccessResponseProjection<ProgramProjection> getProgram(Long programId) {
+        log.info("Service request: Fetching Program ID: {}", programId);
+
         Program program = programRepository.findById(programId)
-                .orElseThrow(() -> new ProgramException("Program not found with id: " + programId, HttpStatus.NOT_FOUND));
+                .orElseThrow(() -> {
+                    log.error("Fetch failed: Program ID: {} not found", programId);
+                    return new ProgramException("Program not found with id: " + programId, HttpStatus.NOT_FOUND);
+                });
+
+        log.info("Successfully retrieved Program: {}", program.getTitle());
 
         return new SuccessResponseProjection<>(true, "Program retrieved successfully", mapToProjection(program));
     }

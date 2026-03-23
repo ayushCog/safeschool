@@ -1,6 +1,7 @@
 package com.cognizant.safeschool.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,10 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class TrainingDto {
+    @NotNull(message = "Program ID is required")
     private Long programId;
+
+    @NotNull(message = "User ID is required")
     private Long userId;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")

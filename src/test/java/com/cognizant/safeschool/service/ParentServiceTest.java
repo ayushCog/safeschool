@@ -1,7 +1,7 @@
 package com.cognizant.safeschool.service;
 
 import com.cognizant.safeschool.classexception.UserException;
-import com.cognizant.safeschool.dto.ParentResgistrationDto;
+import com.cognizant.safeschool.dto.ParentRegistrationDto;
 import com.cognizant.safeschool.entity.Parent;
 import com.cognizant.safeschool.entity.Student;
 import com.cognizant.safeschool.entity.User;
@@ -33,7 +33,7 @@ public class ParentServiceTest {
 
     @Test
     public void addParent_ValidTest() throws UserException {
-        ParentResgistrationDto dto = new ParentResgistrationDto();
+        ParentRegistrationDto dto = new ParentRegistrationDto();
         dto.setStudentEmail("student@school.com");
         dto.setEmail("parent@home.com");
         dto.setName("Parent Name");
@@ -68,7 +68,7 @@ public class ParentServiceTest {
 
     @Test
     public void addParent_StudentNotFound_ThrowsException() {
-        ParentResgistrationDto dto = new ParentResgistrationDto();
+        ParentRegistrationDto dto = new ParentRegistrationDto();
         dto.setStudentEmail("nonexistent@school.com");
 
         when(userRepository.findUserByEmail(dto.getStudentEmail())).thenReturn(null);
@@ -84,7 +84,7 @@ public class ParentServiceTest {
 
     @Test
     public void addParent_DuplicateParentEmail_ThrowsException() {
-        ParentResgistrationDto dto = new ParentResgistrationDto();
+        ParentRegistrationDto dto = new ParentRegistrationDto();
         dto.setStudentEmail("student@school.com");
         dto.setEmail("alreadyexists@home.com");
 

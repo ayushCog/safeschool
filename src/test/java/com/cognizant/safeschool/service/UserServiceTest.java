@@ -1,7 +1,7 @@
 package com.cognizant.safeschool.service;
 
 import com.cognizant.safeschool.classexception.UserException;
-import com.cognizant.safeschool.dto.UserResgistrationDto;
+import com.cognizant.safeschool.dto.UserRegistrationDto;
 import com.cognizant.safeschool.entity.User;
 import com.cognizant.safeschool.projection.SuccessResponseProjection;
 import com.cognizant.safeschool.projection.UserProjection;
@@ -27,7 +27,7 @@ public class UserServiceTest {
 
     @Test
     public void addUser_ValidTest() throws UserException {
-        UserResgistrationDto dto = new UserResgistrationDto();
+        UserRegistrationDto dto = new UserRegistrationDto();
         dto.setName("Test");
         dto.setEmail("test@example.com");
         dto.setRole("OFFICER");
@@ -51,7 +51,7 @@ public class UserServiceTest {
 
     @Test
     public void addUser_DuplicateEmail_ThrowsException() {
-        UserResgistrationDto dto = new UserResgistrationDto();
+        UserRegistrationDto dto = new UserRegistrationDto();
         dto.setEmail("existing@example.com");
 
         User existingUser = new User();

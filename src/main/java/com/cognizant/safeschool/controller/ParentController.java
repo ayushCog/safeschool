@@ -1,6 +1,6 @@
 package com.cognizant.safeschool.controller;
 
-import com.cognizant.safeschool.dto.ParentResgistrationDto;
+import com.cognizant.safeschool.dto.ParentRegistrationDto;
 import com.cognizant.safeschool.projection.ParentProjection;
 import com.cognizant.safeschool.projection.SuccessResponseProjection;
 import com.cognizant.safeschool.service.IParentService;
@@ -18,8 +18,5 @@ public class ParentController {
     @Autowired
     private IParentService iParentService;
 
-    @PostMapping("/register")
-    public ResponseEntity<SuccessResponseProjection<ParentProjection>> registerParent(@RequestBody ParentResgistrationDto parentResgistrationDto) {
-        return ResponseEntity.status(HttpStatus.OK).body(iParentService.addParent(parentResgistrationDto));
-    }
+
 }

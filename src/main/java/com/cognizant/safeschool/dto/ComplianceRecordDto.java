@@ -15,20 +15,23 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-public class IncidentDto {
-    @NotNull(message = "Reporter User ID is required")
-    private Long userId;
+public class ComplianceRecordDto {
+    @NotNull(message = "Entity ID is required")
+    private Long entityId;
 
-    @NotBlank(message = "Incident type is required")
+    @NotBlank(message = "Compliance type is required")
     private String type;
 
-    @NotBlank(message = "Location is required")
-    private String location;
+    @NotBlank(message = "Result is required (e.g., PASSED, FAILED, PENDING)")
+    private String result;
 
-    @NotNull(message = "Date is required")
-    @PastOrPresent(message = "Incident date cannot be in the future")
+    private String notes;
+
+    @NotNull(message = "Officer ID is required for accountability")
+    private Long officerId;
+
+    @NotNull(message = "Compliance date is required")
+    @PastOrPresent(message = "Compliance date cannot be in the future")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate date;
-
-    private String status = "REPORTED";
 }

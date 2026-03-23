@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,15 +21,19 @@ public class Student {
     private Long studentId;
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
+    @NotNull(message = "Student must be linked to a User account")
     private User user;
 
+    @NotNull(message = "Date of birth is required")
+    @Past(message = "Date of birth must be in the past")
     private LocalDate dob;
-    private String gender;
-    private String address;
 
-    @OneToMany(mappedBy = "student")
-    private List<StudentDocument> documents;
+    @NotBlank(message = "Gender is required")
+    private String gender;
+
+    @NotBlank(message = "Address is required")
+    private String address;
 
     @ManyToMany
     @JoinTable(
