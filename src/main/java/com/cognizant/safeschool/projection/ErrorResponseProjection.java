@@ -6,6 +6,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class ErrorResponseProjection {
-    private boolean success;
+    private boolean isSuccess;
     private String message;
 }
