@@ -8,6 +8,7 @@ class SafeschoolApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

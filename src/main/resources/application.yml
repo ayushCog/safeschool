@@ -2,14 +2,6 @@ spring:
   application:
     name: safeschool
 
-
-#logging:
-#  level:
-#    # This silences the Hibernate startup/metadata logs
-#    org.hibernate: WARN
-#    # This silences the connection pool logs
-#    org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: WARN
-
   datasource:
     url: jdbc:mysql://localhost:3306/safeschool_db
     username: root
@@ -27,3 +19,10 @@ spring:
         format_sql: false
 server:
   port: 8081
+
+logging:
+  level:
+    # This silences the Hibernate startup/metadata logs
+    org.hibernate: WARN
+    # This silences the connection pool logs
+    org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl: WARN
