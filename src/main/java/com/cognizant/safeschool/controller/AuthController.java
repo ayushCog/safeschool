@@ -1,5 +1,6 @@
 package com.cognizant.safeschool.controller;
 
+import com.cognizant.safeschool.classexception.SecurityException;
 import com.cognizant.safeschool.dto.LoginRequestDto;
 import com.cognizant.safeschool.dto.ParentRegistrationDto;
 import com.cognizant.safeschool.dto.StudentRegistrationDto;
@@ -16,6 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -67,9 +70,18 @@ public class AuthController {
     public ResponseEntity<SuccessResponseProjection<AuthResponseProjection>> login(@Valid @RequestBody LoginRequestDto request) {
         log.info("Received POST request: Authentication attempt for User: {}", request.getEmail());
 
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
-        );
+        try{
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword())
+            );
+        }
+        catch(BadCredentialsException ex) {
+            log.error("Login failed: Invalid credentials for user {}", request.getEmail());
+            throw new SecurityException("Invalid email or password", HttpStatus.UNAUTHORIZED);
+        } catch (DisabledException ex) {
+            log.error("Login failed: User account {} is disabled", request.getEmail());
+            throw new SecurityException("Account is disabled. Please contact admin.", HttpStatus.FORBIDDEN);
+        }
 
         UserDetails userDetails = userDetailsService.loadUserByUsername(request.getEmail());
         String jwt = jwtUtil.generateToken(userDetails);
