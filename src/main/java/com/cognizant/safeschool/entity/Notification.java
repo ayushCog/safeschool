@@ -30,7 +30,7 @@ public class Notification {
     @NotNull(message = "Notification must be assigned to a user")
     private User user;
 
-    @NotNull(message = "Entity ID (source of notification) is required")
+    @NotNull(message = "Entity ID is required")
     private Long entityId;
 
     @NotBlank(message = "Notification message cannot be empty")

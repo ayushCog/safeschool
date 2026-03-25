@@ -78,7 +78,8 @@ public class AuthController {
         catch(BadCredentialsException ex) {
             log.error("Login failed: Invalid credentials for user {}", request.getEmail());
             throw new SecurityException("Invalid email or password", HttpStatus.UNAUTHORIZED);
-        } catch (DisabledException ex) {
+        }
+        catch (DisabledException ex) {
             log.error("Login failed: User account {} is disabled", request.getEmail());
             throw new SecurityException("Account is disabled. Please contact admin.", HttpStatus.FORBIDDEN);
         }

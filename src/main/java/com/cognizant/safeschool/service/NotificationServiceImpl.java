@@ -90,6 +90,14 @@ public class NotificationServiceImpl implements INotificationService{
 
         List<User> groupUsers = userRepository.findByRole(role);
 
+        if(notificationDto.getEntityId()==null){
+            notificationDto.setEntityId(1L);
+        }
+
+        if(notificationDto.getCategory()==null){
+            notificationDto.setCategory("N/A");
+        }
+
         List<Notification> alerts = groupUsers.stream().map(user -> {
             Notification n = new Notification();
             n.setUser(user);
