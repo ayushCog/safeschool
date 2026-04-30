@@ -1,0 +1,164 @@
+2026-03-24 09:59:11 [main] INFO  c.c.safeschool.SafeschoolApplication - Starting SafeschoolApplication using Java 21.0.2 with PID 29492 (C:\practice\safeschool\target\classes started by 2478072 in C:\practice\safeschool)
+2026-03-24 09:59:11 [main] INFO  c.c.safeschool.SafeschoolApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-24 09:59:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-24 09:59:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-24 09:59:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-24 09:59:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 09:59:14 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@57cff804
+2026-03-24 09:59:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 09:59:14 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-24 09:59:17 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-24 09:59:18 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-24 09:59:19 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-24 09:59:19 [main] INFO  c.c.safeschool.SafeschoolApplication - Started SafeschoolApplication in 9.25 seconds (process running for 10.236)
+2026-03-24 10:01:39 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-24 10:01:40 [http-nio-8081-exec-2] INFO  c.c.s.controller.IncidentController - Received POST request: Creating new incident report by User ID: 1
+2026-03-24 10:01:40 [http-nio-8081-exec-2] INFO  c.c.s.service.IncidentServiceImpl - Service request: Initiating incident creation for User ID: 1 type: Bullying
+2026-03-24 10:01:40 [http-nio-8081-exec-2] INFO  c.c.s.service.IncidentServiceImpl - Successfully saved Incident ID: 2 reported by User ID: 1
+2026-03-24 10:02:14 [http-nio-8081-exec-3] INFO  c.c.s.controller.ProgramController - Received GET request: Fetching details for Program ID: 3
+2026-03-24 10:02:14 [http-nio-8081-exec-3] INFO  c.c.s.service.ProgramServiceImpl - Service request: Fetching Program ID: 3
+2026-03-24 10:02:15 [http-nio-8081-exec-3] ERROR c.c.s.service.ProgramServiceImpl - Fetch failed: Program ID: 3 not found
+2026-03-24 10:03:24 [http-nio-8081-exec-6] INFO  c.c.s.controller.AuthController - Received POST request: Authentication attempt for User: admin2@gmail.com
+2026-03-24 10:04:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-24 10:04:40 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-24 10:48:45 [main] INFO  c.c.safeschool.SafeschoolApplication - Starting SafeschoolApplication using Java 21.0.2 with PID 8224 (C:\practice\safeschool\target\classes started by 2478072 in C:\practice\safeschool)
+2026-03-24 10:48:45 [main] INFO  c.c.safeschool.SafeschoolApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-24 10:48:47 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-24 10:48:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-24 10:48:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-24 10:48:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 10:48:48 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f911d24
+2026-03-24 10:48:48 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 10:48:48 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-24 10:48:50 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-24 10:48:51 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-24 10:48:51 [main] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=com.cognizant.safeschool.classexception.NotificationException, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleSecurityException(com.cognizant.safeschool.classexception.SecurityException), public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleProgramException(com.cognizant.safeschool.classexception.NotificationException)}
+2026-03-24 10:48:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-24 10:48:51 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-24 10:48:51 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-03-24 10:48:51 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'handlerExceptionResolver' defined in class path resource [org/springframework/boot/webmvc/autoconfigure/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=com.cognizant.safeschool.classexception.NotificationException, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleSecurityException(com.cognizant.safeschool.classexception.SecurityException), public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleProgramException(com.cognizant.safeschool.classexception.NotificationException)}
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1218)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1184)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at com.cognizant.safeschool.SafeschoolApplication.main(SafeschoolApplication.java:10)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.web.servlet.HandlerExceptionResolver]: Factory method 'handlerExceptionResolver' threw exception with message: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=com.cognizant.safeschool.classexception.NotificationException, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleSecurityException(com.cognizant.safeschool.classexception.SecurityException), public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleProgramException(com.cognizant.safeschool.classexception.NotificationException)}
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 21 common frames omitted
+Caused by: java.lang.IllegalStateException: Ambiguous @ExceptionHandler method mapped for [ExceptionHandler{exceptionType=com.cognizant.safeschool.classexception.NotificationException, mediaType=*/*}]: {public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleSecurityException(com.cognizant.safeschool.classexception.SecurityException), public org.springframework.http.ResponseEntity com.cognizant.safeschool.globalexception.GlobalExceptionHandler.handleProgramException(com.cognizant.safeschool.classexception.NotificationException)}
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.addExceptionMapping(ExceptionHandlerMethodResolver.java:148)
+	at org.springframework.web.method.annotation.ExceptionHandlerMethodResolver.<init>(ExceptionHandlerMethodResolver.java:101)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.initExceptionHandlerAdviceCache(ExceptionHandlerExceptionResolver.java:310)
+	at org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver.afterPropertiesSet(ExceptionHandlerExceptionResolver.java:277)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.addDefaultHandlerExceptionResolvers(WebMvcConfigurationSupport.java:1054)
+	at org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport.handlerExceptionResolver(WebMvcConfigurationSupport.java:989)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155)
+	... 24 common frames omitted
+2026-03-24 10:50:12 [main] INFO  c.c.safeschool.SafeschoolApplication - Starting SafeschoolApplication using Java 21.0.2 with PID 15556 (C:\practice\safeschool\target\classes started by 2478072 in C:\practice\safeschool)
+2026-03-24 10:50:12 [main] INFO  c.c.safeschool.SafeschoolApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-24 10:50:13 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-24 10:50:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-24 10:50:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-24 10:50:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 10:50:14 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f911d24
+2026-03-24 10:50:14 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 10:50:14 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-24 10:50:15 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-24 10:50:16 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-24 10:50:17 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-24 10:50:17 [main] INFO  c.c.safeschool.SafeschoolApplication - Started SafeschoolApplication in 5.747 seconds (process running for 6.202)
+2026-03-24 10:50:30 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-24 10:50:30 [http-nio-8081-exec-1] INFO  c.c.s.controller.AuthController - Received POST request: Authentication attempt for User: admin2@gmail.com
+2026-03-24 10:50:30 [http-nio-8081-exec-1] ERROR c.c.s.controller.AuthController - Login failed: Invalid credentials for user admin2@gmail.com
+2026-03-24 10:50:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-24 10:50:50 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-24 11:18:32 [main] INFO  c.c.safeschool.SafeschoolApplication - Starting SafeschoolApplication using Java 24.0.1 with PID 19184 (C:\Users\2478175\IdeaProjects\safeschool\target\classes started by 2478175 in C:\Users\2478175\IdeaProjects\safeschool)
+2026-03-24 11:18:32 [main] INFO  c.c.safeschool.SafeschoolApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:18:33 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-24 11:18:33 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-24 11:18:33 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-24 11:18:34 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 11:18:35 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@c478e4e
+2026-03-24 11:18:35 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 11:18:35 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-24 11:18:40 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-24 11:18:40 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-24 11:18:41 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-24 11:18:41 [main] INFO  c.c.safeschool.SafeschoolApplication - Started SafeschoolApplication in 9.786 seconds (process running for 10.445)
+2026-03-24 11:18:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-24 11:18:47 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-24 11:48:06 [main] INFO  c.c.safeschool.SafeschoolApplication - Starting SafeschoolApplication using Java 24.0.1 with PID 7904 (C:\Users\2478175\IdeaProjects\safeschool\target\classes started by 2478175 in C:\Users\2478175\IdeaProjects\safeschool)
+2026-03-24 11:48:06 [main] INFO  c.c.safeschool.SafeschoolApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:48:08 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-24 11:48:08 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-24 11:48:08 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-24 11:48:09 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 11:48:10 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@f575d2b
+2026-03-24 11:48:10 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 11:48:10 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-24 11:48:13 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-24 11:48:13 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-24 11:48:14 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-24 11:48:14 [main] INFO  c.c.safeschool.SafeschoolApplication - Started SafeschoolApplication in 8.776 seconds (process running for 9.531)
+2026-03-24 11:55:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-24 11:55:41 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-03-24 11:55:46 [main] INFO  c.c.safeschool.SafeschoolApplication - Starting SafeschoolApplication using Java 24.0.1 with PID 31480 (C:\Users\2478175\IdeaProjects\safeschool\target\classes started by 2478175 in C:\Users\2478175\IdeaProjects\safeschool)
+2026-03-24 11:55:46 [main] INFO  c.c.safeschool.SafeschoolApplication - No active profile set, falling back to 1 default profile: "default"
+2026-03-24 11:55:48 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-03-24 11:55:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-03-24 11:55:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-24 11:55:49 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-03-24 11:55:50 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@862624f
+2026-03-24 11:55:50 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-03-24 11:55:50 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-03-24 11:55:53 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-24 11:55:53 [main] WARN  o.s.b.j.a.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-24 11:55:54 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-03-24 11:55:54 [main] INFO  c.c.safeschool.SafeschoolApplication - Started SafeschoolApplication in 9.029 seconds (process running for 10.73)
+2026-03-24 11:56:10 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-24 11:56:10 [http-nio-8081-exec-2] INFO  c.c.s.controller.AuthController - Received POST request: Registration attempt for User: admin2@gmail.com with Role: Admin
+2026-03-24 11:56:10 [http-nio-8081-exec-2] INFO  c.c.s.service.UserServiceImpl - Received service request: User registration attempt for Email: admin2@gmail.com with Role: Admin
+2026-03-24 11:56:10 [http-nio-8081-exec-2] INFO  c.c.s.service.UserServiceImpl - Successfully registered User: admin2@gmail.com with ID: 1
+2026-03-24 11:56:23 [http-nio-8081-exec-3] INFO  c.c.s.controller.AuthController - Received POST request: Registration attempt for User: admin2@gmail.com with Role: Admin
+2026-03-24 11:56:23 [http-nio-8081-exec-3] INFO  c.c.s.service.UserServiceImpl - Received service request: User registration attempt for Email: admin2@gmail.com with Role: Admin
+2026-03-24 11:56:23 [http-nio-8081-exec-3] ERROR c.c.s.service.UserServiceImpl - Registration failed: User with Email: admin2@gmail.com already exists
+2026-03-24 11:56:42 [http-nio-8081-exec-4] INFO  c.c.s.controller.AuthController - Received POST request: Student registration attempt for Email: student1@gmail.com
+2026-03-24 11:56:42 [http-nio-8081-exec-4] INFO  c.c.s.service.StudentServiceImpl - Received service request: Student registration attempt for Email: student1@gmail.com
+2026-03-24 11:56:43 [http-nio-8081-exec-4] INFO  c.c.s.service.StudentServiceImpl - Successfully created Student profile for User: student1@gmail.com. StudentID: 1 linked to UserID: 2
+2026-03-24 11:56:53 [http-nio-8081-exec-5] INFO  c.c.s.controller.IncidentController - Received GET request: Fetching all incidents
+2026-03-24 11:56:53 [http-nio-8081-exec-5] INFO  c.c.s.service.IncidentServiceImpl - Service request: Retrieving full incident list from repository
+2026-03-24 11:56:53 [http-nio-8081-exec-5] INFO  c.c.s.service.IncidentServiceImpl - Successfully retrieved 0 incidents
+2026-03-24 11:57:00 [http-nio-8081-exec-6] INFO  c.c.s.controller.IncidentController - Received GET request: Fetching incidents for User ID: 1
+2026-03-24 11:57:00 [http-nio-8081-exec-6] INFO  c.c.s.service.IncidentServiceImpl - Service request: Fetching incident history for User ID: 1
+2026-03-24 11:57:00 [http-nio-8081-exec-6] ERROR c.c.s.service.IncidentServiceImpl - Incident fetch failed: No incidents found for User ID: 1
+2026-03-24 11:57:10 [http-nio-8081-exec-7] INFO  c.c.s.controller.IncidentController - Received POST request: Creating new incident report by User ID: 1
+2026-03-24 11:57:10 [http-nio-8081-exec-7] INFO  c.c.s.service.IncidentServiceImpl - Service request: Initiating incident creation for User ID: 1 type: Bullying
+2026-03-24 11:57:10 [http-nio-8081-exec-7] INFO  c.c.s.service.IncidentServiceImpl - Successfully saved Incident ID: 1 reported by User ID: 1
+2026-03-24 11:57:14 [http-nio-8081-exec-8] INFO  c.c.s.controller.IncidentController - Received GET request: Fetching incidents for User ID: 1
+2026-03-24 11:57:14 [http-nio-8081-exec-8] INFO  c.c.s.service.IncidentServiceImpl - Service request: Fetching incident history for User ID: 1
+2026-03-24 11:57:14 [http-nio-8081-exec-8] INFO  c.c.s.service.IncidentServiceImpl - Successfully retrieved 1 incidents for User ID: 1
+2026-03-24 11:57:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-03-24 11:57:46 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
